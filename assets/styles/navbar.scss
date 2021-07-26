@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+header {
+
+   z-index: 999;
+   position: fixed;
+   background: rgba(255, 255, 255, 0.1);
+   top: 0;
+   left: 0;
+   width: 100%;
+   padding: 15px 200px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+
+  .sticky {
+    background: #3a6cf4;
+    padding: 10px 200px;
+  }
+
+  .brand{
+    color: #fff;
+    font-size: 1.8em;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  .navigation{
+    position: relative;
+  }
+
+  .navigation a{
+    color: #fff;
+    font-size: 1em;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 30px;
+  }
+
+  .navigation a:hover{
+    color: #3a6cf4;
+  }
+
+  .sticky .navigation a:hover{
+    color: #000;
+  }
+
+}
+
+@media (max-width: 1040px) {
+
+  header{
+    padding: 12px 20px;
+
+    .sticky{
+      padding: 10px 20px;
+    }
+
+    .navigation{
+      display: none;
+    }
+
+    .navigation.active{
+      z-index: 888;
+      position: fixed;
+      background: #fff;
+      top: 0;
+      right: 0;
+      width: 380px;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      box-shadow: 0 5px 25px rgba(1 1 1 / 15%);
+      transition: 0.3s ease;
+    }
+
+    .navigation a{
+      color: #000;
+      font-size: 1.2em;
+      margin: 10px;
+      padding: 0 20px;
+      border-radius: 20px;
+
+      &a:hover{
+        background: #3a6cf4;
+        color: #fff;
+        transition: 0.3s ease;
+      }
+    }
+
+
+    .menu-btn{
+      width: 40px;
+      height: 40px;
+      right: 0;
+      margin: 0 20px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .menu-btn.active{
+      z-index: 999;
+      background: url(images/close.png)no-repeat;
+      background-size: 25px;
+      background-position: center;
+      transition: 0.3s ease;
+      filter: invert(1);
+    }
+
+  }
+
+}
+

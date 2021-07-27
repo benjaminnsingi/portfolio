@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Benjamin Nsingi | Portfolio!{% endblock %}</title>
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
@@ -13,22 +13,30 @@
         {% endblock %}
     </head>
     <body>
-        <!-- Start Header --->
-        <div class="scrollToTop-btn">
-            <i class="fas fa-angle-up"></i>
-        </div>
+        <!-- Header --->
+        <header class="l-header">
+            <nav class="nav bd-grid">
+                <div>
+                    <a href="" class="nav__logo">Benjamin Nsingi</a>
+                </div>
 
-        <header>
-            <a href="" class="brand">Benjamin Nsingi</a>
-            <div class="menu-btn"></div>
-            <div class="navigation">
-                <a href="">Accueil</a>
-                <a href="">A propos</a>
-                <a href="">Compétences</a>
-                <a href="">Portfolio</a>
-                <a href="">Contact</a>
-            </div>
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#home" class="nav__link">Accueil</a></li>
+                        <li class="nav__item"><a href="#about" class="nav__link">À propos</a></li>
+                        <li class="nav__item"><a href="#skills" class="nav__link">Compétences</a></li>
+                        <li class="nav__item"><a href="#portfolio" class="nav__link">Portfolio</a></li>
+                        <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="bx bx-menu"></i>
+                </div>
+            </nav>
         </header>
-        {% block content %}{% endblock %}
+        <div class="l-main">
+            {% block content %}{% endblock %}
+        </div>
     </body>
 </html>

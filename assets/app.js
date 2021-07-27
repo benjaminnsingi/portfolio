@@ -1,8 +1,10 @@
-// any CSS you import will output into a single css file (app.css in this case)
 import './styles/app.scss';
+import "boxicons/css/boxicons.min.css";
 
 
-import "@fortawesome/fontawesome-free/scss/fontawesome.scss"
+/*Start  JS */
+import './js/navbar.js';
+import './js/home.js';
 
 // start the Stimulus application
 import './bootstrap';

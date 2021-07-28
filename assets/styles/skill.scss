@@ -8,6 +8,14 @@
   margin-bottom: var(--mb-3);
 }
 
+.skill__title {
+  position: relative;
+  font-size: var(--h4-font-size);
+  color: var(--dark-color);
+  margin: var(--mb-4) 0;
+  text-align: center;
+}
+
 .skills__name{
   display: inline-block;
   font-size: var(--small-font-size);
@@ -25,4 +33,13 @@
 
 .skills__img img{
   border-radius: .5rem;
+}
+
+@media screen and (min-width: 768px) {
+
+  .skills__container{
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+
 }

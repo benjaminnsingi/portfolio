@@ -20,6 +20,7 @@
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.15.3",
-        "boxicons": "^2.0.9"
+        "boxicons": "^2.0.9",
+        "scrollreveal": "^4.0.9"
     }
 }

@@ -17,17 +17,21 @@
         <header class="l-header">
             <nav class="nav bd-grid">
                 <div>
-                    <a href="" class="nav__logo">Benjamin Nsingi</a>
+                    <a href="{{ path('home') }}" class="nav__logo" style="text-decoration: none;">Benjamin Nsingi</a>
                 </div>
 
                 <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list">
-                        <li class="nav__item"><a href="#home" class="nav__link">Accueil</a></li>
+                        <li class="nav__item"><a href="{{ path('home') }}" class="nav__link">Accueil</a></li>
                         <li class="nav__item"><a href="#about" class="nav__link">À propos</a></li>
                         <li class="nav__item"><a href="#skills" class="nav__link">Compétences</a></li>
                         <li class="nav__item"><a href="#portfolio" class="nav__link">Portfolio</a></li>
                         <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
-                        <li class="nav__item"><a href="" class="nav__link">Se connecter</a></li>
+                        {% if app.user %}
+                            <li class="nav__item"><a href="{{ path('app_logout') }}" class="nav__link">Deconnexion</a></li>
+                        {% else %}
+                            <li class="nav__item"><a href="{{ path('app_login') }}" class="nav__link">Se connecter</a></li>
+                        {% endif %}
                     </ul>
                 </div>
 

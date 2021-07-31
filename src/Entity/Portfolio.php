@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\PortfolioRepository;
+use Cocur\Slugify\Slugify;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -47,6 +48,11 @@ class Portfolio
      */
     private ?string $image = null;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private ?string $btnUrl = null;
+
     public function __construct()
     {
         $this->createdAt = new \DateTime();
@@ -68,6 +74,11 @@ class Portfolio
         $this->title = $title;
 
         return $this;
+    }
+
+    public function getSlug(): string
+    {
+        return (new Slugify())->slugify($this->title);
     }
 
     public function getDescription(): ?string
@@ -126,6 +137,18 @@ class Portfolio
     public function setImage(string $image): self
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    public function getBtnUrl(): ?string
+    {
+        return $this->btnUrl;
+    }
+
+    public function setBtnUrl(string $btnUrl): self
+    {
+        $this->btnUrl = $btnUrl;
 
         return $this;
     }

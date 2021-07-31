@@ -3,24 +3,25 @@
     <h2 class="section-title">À PROPOS</h2>
 
     <div class="about__container bd-grid">
+        {% for about in abouts %}
         <div class="about__img">
-            <img src="{{ asset('images/coding.png') }}" alt="">
+            <img src="/uploads/{{ about.image }}" alt="{{ about.subtitle }}">
         </div>
 
         <div>
-            <h2 class="about__subtitle">Je m'appelle Benjamin Nsingi</h2>
-            <span class="about__profession">Développeur PHP Symfony</span>
+            <h2 class="about__subtitle">{{ about.title }}</h2>
+            <span class="about__profession">{{ about.subtitle }}</span>
             <p class="about__text">
-                Développeur web, spécialisé dans le PHP et le framework Symfony, parfaitement à l’aise avec le HTML / CSS / JavaScript. Passionné du monde numérique, autodidacte. J’aime lire, me tenir informé des dernières nouveautés.
+                {{ about.description }}
             </p>
 
             <div class="about__social">
-                <a href="#" class="about__social-icon"><i class='bx bxl-linkedin'></i></a>
-                <a href="#" class="about__social-icon"><i class='bx bxl-github'></i></a>
-                <a href="#" class="about__social-icon"><i class='bx bxl-twitter' ></i></a>
+                <a href="https://fr.linkedin.com/in/benjamin-nsingi" class="about__social-icon"><i class='bx bxl-linkedin'></i></a>
+                <a href="https://github.com/benjaminnsingi" class="about__social-icon"><i class='bx bxl-github'></i></a>
+                <a href="https://twitter.com/benweb_" class="about__social-icon"><i class='bx bxl-twitter' ></i></a>
             </div>
 
         </div>
-
+       {% endfor %}
     </div>
 </section>

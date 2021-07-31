@@ -1,5 +1,9 @@
-<!--===== CONTACT =====-->
 <section class="contact section" id="contact">
+    {% for message in app.flashes('message') %}
+        <div class="message-success" role="alert">
+           <p style="text-align: center"> {{ message }}</p>
+        </div>
+    {% endfor %}
     <h2 class="section-title">Contact</h2>
 
     <div class="contact__container bd-grid">
@@ -13,16 +17,13 @@
             <h3 class="contact__subtitle">ADRESSE</h3>
             <span class="contact__text">ILe-De-France</span>
         </div>
-
-        <form action="" class="contact__form">
-            <div class="contact__inputs">
-                <input type="text" placeholder="Name" class="contact__input">
-                <input type="mail" placeholder="Email" class="contact__input">
-            </div>
-
-            <textarea name="" id="" cols="0" rows="10" class="contact__input"></textarea>
-
-            <input type="submit" value="Envoyer" class="contact__button">
-        </form>
+        {{ form_start(form, {'attr': {'class': 'contact__form'}}) }}
+        <div class="contact__inputs">
+            {{ form_row(form.email) }}
+            {{ form_row(form.sujet) }}
+        </div>
+        {{ form_row(form.message) }}
+        <input type="submit" value="Envoyer" class="contact__button">
+        {{ form_end(form) }}
     </div>
 </section>

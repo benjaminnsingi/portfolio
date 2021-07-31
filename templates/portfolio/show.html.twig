@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+<div class="container" style="padding-top: 80px;">
+    <div class="section portfolio-detail">
+        <div class="details container">
+            <div class="left image-container">
+                <div class="main">
+                    {% if portfolio.image  %}
+                    <img src="/uploads/{{ portfolio.image }}" alt="{{ portfolio.title }}" class="img-thumbnail">
+                    {% endif %}
+                </div>
+            </div>
+            <div class="right">
+                <h1>{{ portfolio.title }}</h1>
+                <p>
+                    {{ portfolio.description | raw }}
+                </p>
+                <br><br>
+                <a href="{{ portfolio.btnUrl }}" class="addCart">Voir le site</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="padding-top: 10%"></div>
+{% endblock %}
